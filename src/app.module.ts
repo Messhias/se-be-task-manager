@@ -18,7 +18,7 @@ import { AppController } from './app.controller';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       entities: [Task],
-      synchronize: process.env.NODE_ENV !== 'production',
+      synchronize: true,
       ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
       retryAttempts: 10,
       retryDelay: 3000,
