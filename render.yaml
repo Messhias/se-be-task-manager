@@ -4,6 +4,7 @@ services:
     env: docker
     dockerfilePath: ./Dockerfile
     dockerContext: .
+    port: 3000
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -14,9 +15,13 @@ services:
           type: redis
           name: taskmanager-redis
           property: connectionString
+      - key: NODE_ENV
+        value: production
     databases:
       - name: taskmanager
         databaseName: taskmanager
         user: taskmanager
+        plan: free
     redis:
-      - name: taskmanager-redis 
+      - name: taskmanager-redis
+        plan: free 
