@@ -5,6 +5,7 @@ services:
     dockerfilePath: ./Dockerfile
     dockerContext: .
     port: 3000
+    healthCheckPath: /documentation
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -17,6 +18,8 @@ services:
           property: connectionString
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 3000
     databases:
       - name: taskmanager
         databaseName: taskmanager
