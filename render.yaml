@@ -20,6 +20,26 @@ services:
         value: production
       - key: PORT
         value: 3000
+      - key: POSTGRES_HOST
+        fromDatabase:
+          name: taskmanager
+          property: host
+      - key: POSTGRES_PORT
+        fromDatabase:
+          name: taskmanager
+          property: port
+      - key: POSTGRES_USER
+        fromDatabase:
+          name: taskmanager
+          property: user
+      - key: POSTGRES_PASSWORD
+        fromDatabase:
+          name: taskmanager
+          property: password
+      - key: POSTGRES_DB
+        fromDatabase:
+          name: taskmanager
+          property: database
     databases:
       - name: taskmanager
         databaseName: taskmanager
