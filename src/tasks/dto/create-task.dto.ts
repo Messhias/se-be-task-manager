@@ -23,8 +23,8 @@ export class CreateTaskDto {
   @ApiProperty({
     description: 'The current status of the task',
     enum: TaskStatus,
-    default: TaskStatus.PENDING,
-    example: TaskStatus.PENDING,
+    default: TaskStatus.BACKLOG,
+    example: TaskStatus.BACKLOG,
   })
   @IsEnum(TaskStatus)
   @IsOptional()

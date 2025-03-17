@@ -4,6 +4,7 @@ export enum TaskStatus {
   PENDING = 'Pending',
   IN_PROGRESS = 'In Progress',
   COMPLETE = 'Complete',
+  BACKLOG = 'Backlog',
 }
 
 @Entity()
@@ -20,7 +21,7 @@ export class Task {
   @Column({
     type: 'enum',
     enum: TaskStatus,
-    default: TaskStatus.PENDING,
+    default: TaskStatus.BACKLOG,
   })
   status: TaskStatus;
 
